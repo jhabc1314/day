@@ -159,7 +159,7 @@ type Writer struct {
 
 //Tar 打包几个文件
 func Tar() {
-	tarFile,err := os.Create("./output.tar") //tarFile 为os.File 类型 实现了io.Writer 接口
+	tarFile,err := os.Create("./cache/output.tar") //tarFile 为os.File 类型 实现了io.Writer 接口
 	if err != nil {
 		panic(err)
 	}

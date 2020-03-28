@@ -147,7 +147,7 @@ type FileHeader struct {
 //Zip demo
 func Zip() {
 	//创建一个zip文件
-	z,err := os.Create("./output.zip")
+	z,err := os.Create("./cache/output.zip")
 	if err != nil {
 		panic(err)
 	}
