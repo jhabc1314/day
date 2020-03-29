@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"io"
+	//"io"
 	"os"
 )
 
@@ -201,14 +201,22 @@ func Read(f string) {
 		panic(err)
 	}
 	defer file.Close()
-	fr := bufio.NewReader(file)
+	//fr := bufio.NewReader(file)
 
+	// for {
+	// 	l, err := fr.ReadString('\n')
+	// 	if err == io.EOF {
+	// 		break
+	// 	}
+	// 	fmt.Println(l)
+	// }
+	fs := bufio.NewScanner(file)
 	for {
-		l, err := fr.ReadString('\n')
-		if err == io.EOF {
+		if fs.Scan() {
+			fmt.Println(fs.Text())
+		} else {
 			break
 		}
-		fmt.Println(l)
 	}
 }
 
