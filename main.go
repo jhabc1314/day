@@ -24,4 +24,6 @@ func main() {
 
     h := container.IntHeap{9,8,11,2,3,5,7,7,15}
     container.HeapFunc(&h) //有序的队列，插入进去自动会排序
+
+    container.ListFunc()
 }

@@ -1,0 +1,11 @@
+package context
+
+
+//包上下文定义了上下文类型，该类型在API边界之间以及进程之间传递截止日期，取消信号和其他请求范围的值。
+
+//向服务器的传入请求应创建一个上下文，而对服务器的传出调用应接受一个上下文。它们之间的函数调用链必须传播Context，可以选择将其替换为使用WithCancel，WithDeadline，WithTimeout或WithValue创建的派生Context。取消上下文后，从该上下文派生的所有上下文也会被取消。
+
+//WithCancel，WithDeadline和WithTimeout函数采用Context（父级）并返回派生的Context（子级）和CancelFunc。调用CancelFunc会取消该子代及其子代，删除父代对该子代的引用，并停止所有关联的计时器。未能调用CancelFunc会使子代及其子代泄漏，直到父代被取消或计时器触发。审核工具检查所有控制流路径上是否都使用了CancelFuncs。
+
+
+

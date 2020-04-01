@@ -1,5 +1,10 @@
 package container
 
+import (
+	"container/list"
+	"fmt"
+)
+
 //软件包列表实现了双向链接列表。
 
 //元素是链接列表的元素。
@@ -62,4 +67,16 @@ type List struct {
 //func (l *List) PushFrontList(other *List)
 
 //func (l *List) Remove(e *Element) interface{}
+
+func ListFunc() {
+	l := list.New()
+	ef := l.PushFront(10)
+	eb := l.PushBack("tail")
+	l.InsertAfter("second", ef)
+	l.InsertBefore("third", eb)
+	//循环list内的element
+	for f := l.Front(); f != nil; f = f.Next() {
+		fmt.Println(f.Value)
+	}
+}
 
