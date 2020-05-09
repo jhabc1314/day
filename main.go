@@ -6,6 +6,9 @@ import (
 	"github.com/jhabc1314/day/builtin"
 	"github.com/jhabc1314/day/bytes"
 	"github.com/jhabc1314/day/container"
+	"github.com/jhabc1314/day/crypto/cipher"
+	"github.com/jhabc1314/day/crypto/md5"
+	"github.com/jhabc1314/day/crypto/rand"
 )
 //单引号则用于表示Golang的一个特殊类型：rune，类似其他语言的byte但又不完全一样，是指：码点字面量（Unicode code point），不做任何转义的原始内容
 func main() {
@@ -26,4 +29,11 @@ func main() {
     container.HeapFunc(&h) //有序的队列，插入进去自动会排序
 
     container.ListFunc()
+
+    md5.Md5Demo()
+
+    cipher.Encrypt()
+    cipher.Decrypt()
+
+    rand.RandDemo()
 }
